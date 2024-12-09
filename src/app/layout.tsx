@@ -6,7 +6,7 @@ import Navbar from '../components/layout/Navbar';
 const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Grabit | Old Items, New Home',
+  title: 'Grabit | Old Items, New Homes',
   description: 'Join the eco-friendly movement by giving and receiving free items. Our platform makes recycling easy, connecting people to share, reuse, and reduce waste—one free item at a time.',
 };
 
