@@ -6,14 +6,7 @@ import SearchBar from './SearchBar';
 import ProfileDropdown from './ProfileDropdown';
 import Link from 'next/link';
 
-const Navbar = ({ onPostcodeChange }: { onPostcodeChange: (postcode: string) => void }) => {
-  const [postcode, setPostcode] = useState('');
-
-  const handlePostcodeChange = (value: string) => {
-    setPostcode(value);
-    onPostcodeChange(value);
-  };
-
+const Navbar = () => {
   return (
     <nav className="bg-[#2F892C] shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,8 +28,6 @@ const Navbar = ({ onPostcodeChange }: { onPostcodeChange: (postcode: string) => 
               placeholder="Postcode"
               icon={<MapPin className="h-5 w-5 text-gray-400" />}
               className="w-40"
-              value={postcode}
-              onChange={(e) => handlePostcodeChange(e.target.value.slice(0, 8))}
             />
             <button className="nav-button text-white bg-[#246B22]" title="Search">
               <Search className="h-5 w-5" />
