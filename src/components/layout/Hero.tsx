@@ -1,20 +1,5 @@
-// export default function Hero() {
-//     return (
-//       <div className="bg-green-50 py-12 mb-8">
-//         <div className="container mx-auto px-4">
-//           <h1 className="text-5xl font-bold text-[#2D882C] mb-4">
-//            Old Items, New Homes.
-//           </h1>
-//           <p className="text-lg text-gray-700">
-//           Grabit connects eco-conscious individuals to give and receive free items, promoting a sustainable and waste-free future. Join us to share, reuse, and reduce waste in your community.
-//           </p>
-//         </div>
-//       </div>
-//     )
-//   }
-
-
 import Image from 'next/image'
+import HeroImage from '../../public/images/grabit_hero.jpg'
 
 export default function Hero() {
   return (
@@ -31,7 +16,7 @@ export default function Hero() {
           </div>
           <div className="md:w-1/2">
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src={HeroImage}
               alt="Recycling clothes and items"
               width={600}
               height={400}

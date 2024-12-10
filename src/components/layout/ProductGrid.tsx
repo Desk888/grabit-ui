@@ -9,7 +9,7 @@ interface Product {
   category: string
   condition: string
   location: string
-  image: string
+  images: string[]
 }
 
 export default function ProductGrid() {
@@ -25,7 +25,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Good",
         location: "London, SW1A 1AA",
-        image: "https://picsum.photos/seed/lamp/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 2,
@@ -33,7 +37,11 @@ export default function ProductGrid() {
         category: "Sports & Outdoors",
         condition: "Used - Fair",
         location: "Manchester, M1 1AE",
-        image: "https://picsum.photos/seed/bike/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 3,
@@ -41,7 +49,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Mint",
         location: "London, E1 6AE",
-        image: "https://picsum.photos/seed/desk/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 4,
@@ -49,7 +61,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Mint",
         location: "London, E1 6AE",
-        image: "https://picsum.photos/seed/desk/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 5,
@@ -57,7 +73,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Mint",
         location: "London, E1 6AE",
-        image: "https://picsum.photos/seed/desk/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 6,
@@ -65,7 +85,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Mint",
         location: "London, E1 6AE",
-        image: "https://picsum.photos/seed/desk/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 7,
@@ -73,7 +97,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Mint",
         location: "London, E1 6AE",
-        image: "https://picsum.photos/seed/desk/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
       {
         id: 8,
@@ -81,7 +109,11 @@ export default function ProductGrid() {
         category: "Home & Garden",
         condition: "Used - Mint",
         location: "London, E1 6AE",
-        image: "https://picsum.photos/seed/desk/300/200"
+        images: [
+          "https://picsum.photos/seed/product1a/300/200",
+          "https://picsum.photos/seed/product1b/300/200",
+          "https://picsum.photos/seed/product1c/300/200"
+        ]
       },
     ]
 
