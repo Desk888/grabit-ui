@@ -1,11 +1,11 @@
 
 import type { Metadata } from 'next';
-import { Rubik } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 
-const rubik = Rubik({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Grabit | Old Items, New Homes',
@@ -19,12 +19,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>
+      <body className={inter.className}>
         <Navbar />
-        <main>
-          {children}
-        </main>
-        <Footer />
+        <main>{children}</main>
       </body>
     </html>
   );

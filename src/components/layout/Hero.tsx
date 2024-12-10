@@ -1,31 +1,67 @@
-import Image from 'next/image'
-import HeroImage from '../../public/images/grabit_hero.jpg'
+'use client';
 
-export default function Hero() {
+import { Search, MapPin } from 'lucide-react';
+import SearchBar from '../layout/SearchBar';
+
+const Hero = () => {
   return (
-    <div className="bg-green-50 py-12 mb-16">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-          <div className="md:w-1/2 mb-8 md:mb-0">
-            <h1 className="text-5xl font-bold text-[#2D882C] mb-4">
-              Old Items, New Homes.
-            </h1>
-            <p className="text-lg text-gray-700">
-            Grabit connects eco-conscious individuals to give and receive free items, promoting a sustainable and waste-free future. Join us to share, reuse, and reduce waste in your community.
-            </p>
-          </div>
-          <div className="md:w-1/2">
-            <Image
-              src={HeroImage}
-              alt="Recycling clothes and items"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-md"
-            />
+    <div className="relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          className="w-full h-[500px] object-cover"
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
+          alt="Local marketplace"
+        />
+        <div className="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
+      </div>
+
+      {/* Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="text-center">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+            Find What You Need,
+            <span className="block text-[#2F892C]">Right Around The Corner</span>
+          </h1>
+          <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-200">
+            Discover unique free items from people in your local community. <br />
+            Buy, sell, and connect with neighbors.
+          </p>
+
+          {/* Search Section */}
+          <div className="mt-10 max-w-3xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <SearchBar
+                placeholder="Search Items"
+                icon={<Search className="h-5 w-5 text-gray-400" />}
+                className="flex-1"
+              />
+              <SearchBar
+                placeholder="Postcode"
+                icon={<MapPin className="h-5 w-5 text-gray-400" />}
+                className="sm:w-40"
+              />
+              <button className="px-6 py-2 bg-[#2F892C] text-white rounded-md hover:bg-[#246B22] transition-colors duration-200">
+                Search
+              </button>
+            </div>
+            <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-white">
+              <span>Popular:</span>
+              {['Electronics', 'Furniture', 'Books', 'Sports', 'Clothing'].map((item) => (
+                <button
+                  key={item}
+                  className="hover:text-[#2F892C] transition-colors duration-200"
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
+
+export default Hero;
 
