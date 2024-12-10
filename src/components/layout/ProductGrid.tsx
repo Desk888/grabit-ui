@@ -21,10 +21,10 @@ export default function ProductGrid() {
     const mockProducts: Product[] = [
       {
         id: 1,
-        title: "Test 1",
+        title: "Floor Lamp white",
         category: "Home & Garden",
-        condition: "Used - Good",
-        location: "London, SW1A 1AA",
+        condition: "Used - Fair",
+        location: "London, N15 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
@@ -33,7 +33,7 @@ export default function ProductGrid() {
       },
       {
         id: 2,
-        title: "Test 2",
+        title: "adidas football shoes size 9",
         category: "Sports & Outdoors",
         condition: "Used - Fair",
         location: "Manchester, M1 1AE",
@@ -45,10 +45,10 @@ export default function ProductGrid() {
       },
       {
         id: 3,
-        title: "Test 3",
-        category: "Home & Garden",
+        title: "Bosch drill press",
+        category: "Tools & Hardware",
         condition: "Used - Mint",
-        location: "London, E1 6AE",
+        location: "Petersborough, S1 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
@@ -57,10 +57,10 @@ export default function ProductGrid() {
       },
       {
         id: 4,
-        title: "Test 4",
-        category: "Home & Garden",
+        title: "Ralph Lauren mens sweater",
+        category: "Clothing & Accessories",
         condition: "Used - Mint",
-        location: "London, E1 6AE",
+        location: "Barnet, N15 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
@@ -69,10 +69,10 @@ export default function ProductGrid() {
       },
       {
         id: 5,
-        title: "Test 5",
-        category: "Home & Garden",
-        condition: "Used - Mint",
-        location: "London, E1 6AE",
+        title: "canada goose down jacket",
+        category: "Clothing & Accessories",
+        condition: "Used - Good",
+        location: "Brighton, BN1 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
@@ -81,10 +81,10 @@ export default function ProductGrid() {
       },
       {
         id: 6,
-        title: "Test 6",
-        category: "Home & Garden",
+        title: "HDMI cable male to male",
+        category: "Electronics",
         condition: "Used - Mint",
-        location: "London, E1 6AE",
+        location: "Edinburgh, EH1 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
@@ -93,10 +93,10 @@ export default function ProductGrid() {
       },
       {
         id: 7,
-        title: "Test 7",
-        category: "Home & Garden",
-        condition: "Used - Mint",
-        location: "London, E1 6AE",
+        title: "Foundation Maths book",
+        category: "Books",
+        condition: "Used - Fair",
+        location: "Chester, CH1 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
@@ -105,10 +105,10 @@ export default function ProductGrid() {
       },
       {
         id: 8,
-        title: "Test 8",
+        title: "Tressemme hairdryer",
         category: "Home & Garden",
         condition: "Used - Mint",
-        location: "London, E1 6AE",
+        location: "Shoreditch, EC1 1AE",
         images: [
           "https://picsum.photos/seed/product1a/300/200",
           "https://picsum.photos/seed/product1b/300/200",
