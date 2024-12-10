@@ -1,17 +1,20 @@
 'use client';
 
 import { Search, MapPin } from 'lucide-react';
+import Image from 'next/image';
 import SearchBar from '../layout/SearchBar';
+import MyImage from '../../public/images/grabit_hero.jpg'
 
 const Hero = () => {
   return (
     <div className="relative">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img
-          className="w-full h-[500px] object-cover"
-          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-          alt="Local marketplace"
+        <Image
+          src={MyImage}
+          alt="Grabit Hero"
+          fill
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
       </div>
@@ -21,7 +24,7 @@ const Hero = () => {
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             Find What You Need,
-            <span className="block text-[#2F892C]">Right Around The Corner</span>
+            <span className="block text-white">Right Around The Corner</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-200">
             Discover unique free items from people in your local community. <br />
