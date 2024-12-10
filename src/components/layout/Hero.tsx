@@ -14,9 +14,9 @@ const Hero = () => {
           src={MyImage}
           alt="Grabit Hero"
           fill
-          className="object-cover"
+          className="object-cover opacity-95"
         />
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-60"></div>
+        <div className="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
       </div>
 
       {/* Content */}
@@ -24,10 +24,10 @@ const Hero = () => {
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             Find What You Need,
-            <span className="block text-white">Right Around The Corner</span>
+            <span className="block text-[#2F892C]">Right Around The Corner</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-200">
-            Discover unique free items from people in your local community. <br />
+            Discover unique items from people in your local community. <br />
             Buy, sell, and connect with neighbors.
           </p>
 
