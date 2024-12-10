@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <footer className="bg-[#2D882C] text-white py-12 mt-12">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="space-y-4">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
+          <div className="space-y-4 md:w-1/3">
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <nav>
               <ul className="space-y-2">
@@ -43,9 +43,9 @@ export default function Footer() {
               </ul>
             </nav>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 md:w-1/3">
             <h3 className="text-xl font-semibold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-start">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-200 transition-colors">
                 <Twitter size={24} />
               </a>
@@ -57,7 +57,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 md:w-1/3">
             <h3 className="text-xl font-semibold mb-4">About Grabit</h3>
             <p className="text-sm mb-4">
             Our mission is to make sustainability accessible by connecting people who want to give away items they no longer need with those who can use them. From furniture to books, electronics to clothes—Grabit helps reduce waste and create a circular economy, one free item at a time.

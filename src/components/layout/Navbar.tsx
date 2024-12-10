@@ -36,9 +36,9 @@ const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <button className="nav-button text-white hover:bg-[#246B22]" title="Add Product">
+            <Link href="/new_product" className="nav-button text-white hover:bg-[#246B22]" title="Add Product">
               <PlusCircle className="h-5 w-5" />
-            </button>
+            </Link>
             <Link href="/inbox" className="nav-button text-white hover:bg-[#246B22]" title="Messages">
               <MessageCircle className="h-5 w-5" />
             </Link>
