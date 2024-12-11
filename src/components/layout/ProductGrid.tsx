@@ -1,131 +1,43 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import ProductCard from './ProductCard'
-
-interface Product {
-  id: number
-  title: string
-  category: string
-  condition: string
-  location: string
-  images: string[]
-}
+import { useState } from 'react'
+import ProductCard from '@/components/layout/ProductCard'
+import { PaginationControls } from '@/components/layout/PaginationControls'
+import { useProducts } from '@/components/layout/useProducts'
 
 export default function ProductGrid() {
-  const [products, setProducts] = useState<Product[]>([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const { products, isLoading, error } = useProducts()
 
-  useEffect(() => {
-    // In a real application, you would fetch products from an API
-    // For this example, we'll use mock data
-    const mockProducts: Product[] = [
-      {
-        id: 1,
-        title: "Floor Lamp white",
-        category: "Home & Garden",
-        condition: "Used - Fair",
-        location: "London, N15 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 2,
-        title: "adidas football shoes size 9",
-        category: "Sports & Outdoors",
-        condition: "Used - Fair",
-        location: "Manchester, M1 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 3,
-        title: "Bosch drill press",
-        category: "Tools & Hardware",
-        condition: "Used - Mint",
-        location: "Petersborough, S1 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 4,
-        title: "Ralph Lauren mens sweater",
-        category: "Clothing & Accessories",
-        condition: "Used - Mint",
-        location: "Barnet, N15 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 5,
-        title: "canada goose down jacket",
-        category: "Clothing & Accessories",
-        condition: "Used - Good",
-        location: "Brighton, BN1 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 6,
-        title: "HDMI cable male to male",
-        category: "Electronics",
-        condition: "Used - Mint",
-        location: "Edinburgh, EH1 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 7,
-        title: "Foundation Maths book",
-        category: "Books",
-        condition: "Used - Fair",
-        location: "Chester, CH1 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-      {
-        id: 8,
-        title: "Tressemme hairdryer",
-        category: "Home & Garden",
-        condition: "Used - Mint",
-        location: "Shoreditch, EC1 1AE",
-        images: [
-          "https://picsum.photos/seed/product1a/300/200",
-          "https://picsum.photos/seed/product1b/300/200",
-          "https://picsum.photos/seed/product1c/300/200"
-        ]
-      },
-    ]
+  const PRODUCTS_PER_PAGE = 8 // 4 cards per row * 2 rows
+  const totalPages = Math.ceil((products?.length || 0) / PRODUCTS_PER_PAGE)
+  
+  const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE
+  const endIndex = startIndex + PRODUCTS_PER_PAGE
+  const currentProducts = products?.slice(startIndex, endIndex) || []
 
-    setProducts(mockProducts)
-  }, [])
+  if (isLoading) {
+    return <div className="text-center py-8">Loading...</div>
+  }
+
+  if (error) {
+    return <div className="text-center py-8 text-red-500">Error loading products</div>
+  }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {products.map(product => (
-        <ProductCard key={product.id} product={product} />
-      ))}
+    <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {currentProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+      
+      <PaginationControls
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        className="mt-8"
+      />
     </div>
   )
 }
-

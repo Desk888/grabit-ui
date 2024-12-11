@@ -44,8 +44,8 @@ const Hero = () => {
                 icon={<MapPin className="h-5 w-5 text-gray-400" />}
                 className="sm:w-40"
               />
-              <button className="px-6 py-2 bg-[#2F892C] text-white rounded-md hover:bg-[#246B22] transition-colors duration-200">
-                Search
+              <button className="bg-[#2F892C] hover:bg-[#246B22] text-white px-6 py-2 rounded-md flex items-center gap-2 transition-colors">
+                <Search size={20} />
               </button>
             </div>
             <div className="mt-4 flex flex-wrap justify-center gap-4 text-sm text-white">

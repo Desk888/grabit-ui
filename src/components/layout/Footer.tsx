@@ -3,7 +3,7 @@ import { Twitter, Instagram, Linkedin, Home, Info, Settings, HelpCircle, FileQue
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2D882C] text-white py-12 mt-12">
+    <footer className="bg-[#2D882C] text-white py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div className="space-y-4 md:w-1/3">

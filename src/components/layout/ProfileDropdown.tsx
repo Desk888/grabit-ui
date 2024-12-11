@@ -17,8 +17,9 @@ const menuItems = [
 const ProfileDropdown = () => {
   return (
     <Menu as="div" className="relative">
-      <Menu.Button className="nav-button text-white hover:bg-[#246B22]" title="Profile">
+      <Menu.Button className="nav-button text-white hover:bg-[#246B22] flex flex-col items-center" title="Profile">
         <User className="h-5 w-5" />
+        <span className="text-xs mt-0.5">You</span>
       </Menu.Button>
 
       <Transition
