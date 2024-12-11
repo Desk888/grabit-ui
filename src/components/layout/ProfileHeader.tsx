@@ -1,6 +1,14 @@
-import { User, MapPin, Package, Clock, Calendar } from "lucide-react";
+import { User, MapPin, Package, Clock, Calendar, MoreVertical } from "lucide-react";
 import { Card } from "../../components/ui/card";
 import ProductCard from '@/components/layout/ProductCard';
+import Link from 'next/link';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
 
 // Dummy data
 const mockProducts = Array.from({ length: 4 }, (_, i) => ({
@@ -25,7 +33,23 @@ const Profile = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-8">
       {/* Profile Header */}
-      <Card className="p-6 md:p-8">
+      <Card className="p-6 md:p-8 relative">
+        <div className="absolute top-4 right-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <MoreVertical className="w-6 h-6" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem asChild>
+                <Link href="/settings">
+                  Edit Profile
+                </Link>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="relative">
             <img
