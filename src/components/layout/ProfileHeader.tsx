@@ -1,17 +1,26 @@
-import { User, MapPin, Package, Clock } from "lucide-react";
+import { User, MapPin, Package, Clock, Calendar } from "lucide-react";
 import { Card } from "../../components/ui/card";
+import ProductCard from '@/components/layout/ProductCard';
+
+// Dummy data
+const mockProducts = Array.from({ length: 4 }, (_, i) => ({
+  id: i + 101,
+  title: `My Product ${i + 1}`,
+  price: `£${Math.floor(Math.random() * 100) + 1}`,
+  location: ['London', 'Manchester', 'Birmingham', 'Leeds'][Math.floor(Math.random() * 4)],
+  postedAt: new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000),
+  images: [`https://picsum.photos/seed/myproduct${i + 1}/300/300`]
+}));
 
 const Profile = () => {
-  // This would come from your auth system or API
   const user = {
     name: "Sarah Johnson",
     username: "@sarahj",
     location: "London, UK",
     joinedYear: "2021",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop",
+    bio: "Lover of all things 90s. I'm a huge fan of thrifting and giving life to clothes. I love to shop for vintage items and I'm always up for a good bargain. I also love to travel and explore new places. When I'm not shopping or traveling, you can find me reading, writing, or playing video games."
   };
-
-  console.log("Rendering Profile page for user:", user.username);
 
   return (
     <div className="max-w-4xl mx-auto space-y-8">
@@ -36,11 +45,20 @@ const Profile = () => {
                 <MapPin className="w-4 h-4" />
                 <span>{user.location}</span>
               </div>
+              <div className="flex items-center justify-center md:justify-start gap-1">
+                <Calendar className="w-4 h-4" />
+                <span>Joined {user.joinedYear}</span>
+              </div>
             </div>
+            {user.bio && (
+              <p className="mt-4 text-gray-700 max-w-xl">
+                {user.bio}
+              </p>
+            )}
           </div>
         </div>
       </Card>
-      
+
       {/* My Ads Section */}
       <section className="space-y-4">
         <div className="flex items-center gap-2">
@@ -48,7 +66,11 @@ const Profile = () => {
           <h2 className="text-xl font-semibold">My Ads</h2>
         </div>
         <Card className="p-6">
-          <p className="text-gray-600 text-center">No ads posted yet</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {mockProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </Card>
       </section>
 
@@ -59,7 +81,11 @@ const Profile = () => {
           <h2 className="text-xl font-semibold">Recently Viewed</h2>
         </div>
         <Card className="p-6">
-          <p className="text-gray-600 text-center">No items viewed yet</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {mockProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </Card>
       </section>
     </div>
