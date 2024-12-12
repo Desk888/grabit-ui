@@ -40,6 +40,18 @@ export default function Footer() {
                     FAQ
                   </Link>
                 </li>
+                <li>
+                  <Link href="/terms" className="flex items-center hover:text-gray-200 transition-colors">
+                    <FileQuestion size={18} className="mr-2" />
+                    Terms & Conditions
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="flex items-center hover:text-gray-200 transition-colors">
+                    <FileQuestion size={18} className="mr-2" />
+                    Privacy Policy
+                  </Link>
+                </li>
               </ul>
             </nav>
           </div>

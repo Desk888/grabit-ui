@@ -17,13 +17,11 @@ export default function AutoScroll() {
         const documentHeight = document.documentElement.scrollHeight
 
         if (currentScroll + windowHeight >= documentHeight) {
-          // If at bottom, scroll to top
           window.scrollTo({
             top: 0,
             behavior: 'smooth'
           })
         } else {
-          // Scroll down one viewport height
           window.scrollBy({
             top: windowHeight,
             behavior: 'smooth'
@@ -35,7 +33,6 @@ export default function AutoScroll() {
     return () => clearInterval(interval)
   }, [isScrolling])
 
-  // Stop auto-scroll when user manually scrolls
   useEffect(() => {
     const handleScroll = () => {
       if (isScrolling) setIsScrolling(false)

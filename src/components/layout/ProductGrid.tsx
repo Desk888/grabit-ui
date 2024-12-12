@@ -9,7 +9,7 @@ export default function ProductGrid() {
   const [currentPage, setCurrentPage] = useState(1)
   const { products, isLoading, error } = useProducts()
 
-  const PRODUCTS_PER_PAGE = 8 // 4 cards per row * 2 rows
+  const PRODUCTS_PER_PAGE = 8
   const totalPages = Math.ceil((products?.length || 0) / PRODUCTS_PER_PAGE)
   
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE
@@ -24,7 +24,7 @@ export default function ProductGrid() {
         setCurrentPage((prevPage) => {
           return prevPage === totalPages ? 1 : prevPage + 1
         })
-      }, 5000) // 5 seconds
+      }, 5000)
     }
 
     return () => {
