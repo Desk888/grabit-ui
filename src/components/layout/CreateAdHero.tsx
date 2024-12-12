@@ -19,7 +19,7 @@ export default function CreateAdHero() {
               <li>Write a descriptive title and detailed description</li>
               <li>Set your location and contact details</li>
               <li>Choose the right category and condition</li>
-              <li>Review your ad and submit!</li>
+              <li>Review your ad and submit</li>
             </ul>
           </div>
         </div>

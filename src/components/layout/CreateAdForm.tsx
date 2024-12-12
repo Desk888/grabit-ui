@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { Camera, X, Upload, Eye, Save } from 'lucide-react'
 import { Input } from '@/components/ui/input'
@@ -24,8 +24,8 @@ type FormData = {
   email: string
 }
 
-const categories = ['Electronics', 'Furniture', 'Clothing', 'Books', 'Sports', 'Other']
-const conditions = ['Used - Fair', 'Used - Good', 'Used - Excellent', 'Brand New']
+const categories = ['Electronics & Hardware', 'Home & Furniture', 'Clothing & Accessories', 'Books', 'Sports & Outdoors', 'Tools & Hardware', 'Other']
+const conditions = ['Used - Fair', 'Used - Good', 'Used - Excellent', 'Brand New - Unboxed', 'Brand New - Used']
 
 export default function CreateAdForm() {
   const [images, setImages] = useState<string[]>([])
@@ -53,12 +53,24 @@ export default function CreateAdForm() {
     setImages(prev => prev.filter((_, i) => i !== index))
   }
 
-  const calculateProgress = () => {
-    const totalFields = Object.keys(watchedFields).length + (images.length > 0 ? 1 : 0)
-    const filledFields = Object.values(watchedFields).filter(Boolean).length + (images.length > 0 ? 1 : 0)
-    const newProgress = (filledFields / totalFields) * 100
-    setProgress(newProgress)
-  }
+  const calculateProgress = useCallback(() => {
+    const requiredFields = ['title', 'description', 'category', 'city', 'postcode', 'condition', 'phoneNumber', 'email']
+    const totalFields = requiredFields.length + 1
+    
+    const filledFields = requiredFields.reduce((count, fieldName) => {
+      const value = watchedFields[fieldName as keyof FormData]
+      return value ? count + 1 : count
+    }, 0)
+
+    const imagesFilled = images.length > 0 ? 1 : 0
+    
+    const newProgress = ((filledFields + imagesFilled) / totalFields) * 100
+    setProgress(Math.min(newProgress, 100))
+  }, [watchedFields, images])
+
+  useEffect(() => {
+    calculateProgress()
+  }, [calculateProgress])
 
   const saveDraft = () => {
     const draftData = { ...watchedFields, images }
