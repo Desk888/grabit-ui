@@ -1,5 +1,6 @@
 import CreateAdForm from '../../components/layout/CreateAdForm'
 import CreateAdHero from '@/components/layout/CreateAdHero'
+import AutoScroll from '@/components/layout/AutoScroll'
 
 export default function CreateAdPage() {
   return (
@@ -15,6 +16,7 @@ export default function CreateAdPage() {
           </div>
         </div>
       </main>
+      <AutoScroll />
     </div>
   )
 }

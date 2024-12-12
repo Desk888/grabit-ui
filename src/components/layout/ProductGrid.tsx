@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ProductCard from '@/components/layout/ProductCard'
 import { PaginationControls } from '@/components/layout/PaginationControls'
 import { useProducts } from '@/components/layout/useProducts'
@@ -15,6 +15,24 @@ export default function ProductGrid() {
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE
   const endIndex = startIndex + PRODUCTS_PER_PAGE
   const currentProducts = products?.slice(startIndex, endIndex) || []
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+
+    if (totalPages > 1) {
+      interval = setInterval(() => {
+        setCurrentPage((prevPage) => {
+          return prevPage === totalPages ? 1 : prevPage + 1
+        })
+      }, 5000) // 5 seconds
+    }
+
+    return () => {
+      if (interval) {
+        clearInterval(interval)
+      }
+    }
+  }, [totalPages])
 
   if (isLoading) {
     return <div className="text-center py-8">Loading...</div>
