@@ -28,7 +28,7 @@ const Hero = () => {
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-200">
             Discover unique items from people in your local community. <br />
-            Buy, sell, and connect with neighbors.
+            {/* Buy, sell, and connect with neighbors. */}
           </p>
 
           {/* Search Section */}

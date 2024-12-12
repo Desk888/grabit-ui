@@ -8,7 +8,6 @@ import { MapPin, Heart, ChevronLeft, ChevronRight } from 'lucide-react'
 interface Product {
   id: number
   title: string
-  price: string
   location: string
   postedAt: Date
   images?: string[]
@@ -100,7 +99,6 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className="p-3">
           <div className="flex justify-between items-start mb-2">
             <h2 className="text-base font-medium text-gray-900 line-clamp-1">{product.title}</h2>
-            <span className="text-lg font-semibold text-green-600">{product.price}</span>
           </div>
           <div className="flex items-center text-sm text-gray-500 space-x-1">
             <MapPin size={14} className="flex-shrink-0" />

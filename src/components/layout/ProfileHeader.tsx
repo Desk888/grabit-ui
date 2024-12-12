@@ -14,7 +14,6 @@ import { Button } from "@/components/ui/button";
 const mockProducts = Array.from({ length: 4 }, (_, i) => ({
   id: i + 101,
   title: `My Product ${i + 1}`,
-  price: `£${Math.floor(Math.random() * 100) + 1}`,
   location: ['London', 'Manchester', 'Birmingham', 'Leeds'][Math.floor(Math.random() * 4)],
   postedAt: new Date(Date.now() - Math.floor(Math.random() * 30) * 24 * 60 * 60 * 1000),
   images: [`https://picsum.photos/seed/myproduct${i + 1}/300/300`]
