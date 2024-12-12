@@ -16,7 +16,7 @@ const Hero = () => {
           fill
           className="object-cover opacity-95"
         />
-        <div className="absolute inset-0 bg-green-900 bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-green-900 bg-opacity-60"></div>
       </div>
 
       {/* Content */}
