@@ -1,10 +1,7 @@
-'use client'
 
 import CreateAdForm from '../../components/layout/CreateAdForm'
 import CreateAdHero from '@/components/layout/CreateAdHero'
 import AutoScroll from '@/components/layout/AutoScroll'
-import LivePreview from '@/components/layout/LivePreview'
-import { useState } from 'react'
 
 export default function CreateAdPage() {
   return (
