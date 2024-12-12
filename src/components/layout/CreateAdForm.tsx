@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useForm, Controller } from 'react-hook-form'
-import { Camera, X, Upload } from 'lucide-react'
+import { Camera, X, Upload, Eye, Save } from 'lucide-react'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
@@ -10,6 +10,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Label } from '@/components/ui/label'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
+import { Progress } from '@/components/ui/progress'
+import { useDropzone } from 'react-dropzone'
 
 type FormData = {
   title: string
@@ -27,31 +29,59 @@ const conditions = ['Used - Fair', 'Used - Good', 'Used - Excellent', 'Brand New
 
 export default function CreateAdForm() {
   const [images, setImages] = useState<string[]>([])
-  const { control, handleSubmit, formState: { errors } } = useForm<FormData>()
+  const [progress, setProgress] = useState(0)
+  const { control, handleSubmit, watch, formState: { errors } } = useForm<FormData>()
+  const watchedFields = watch()
 
   const onSubmit = (data: FormData) => {
     console.log(data, images)
     // Here you would typically send the data to your backend
   }
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files
-    if (files && files.length > 0 && images.length < 5) {
-      const newImages = Array.from(files).map(file => URL.createObjectURL(file))
-      setImages(prev => [...prev, ...newImages].slice(0, 5))
+  const onDrop = useCallback((acceptedFiles: File[]) => {
+    if (images.length + acceptedFiles.length > 5) {
+      alert('You can only upload a maximum of 5 images.')
+      return
     }
-  }
+    const newImages = acceptedFiles.map(file => URL.createObjectURL(file))
+    setImages(prev => [...prev, ...newImages])
+  }, [images])
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop, accept: {'image/*': []} })
 
   const removeImage = (index: number) => {
     setImages(prev => prev.filter((_, i) => i !== index))
   }
 
+  const calculateProgress = () => {
+    const totalFields = Object.keys(watchedFields).length + (images.length > 0 ? 1 : 0)
+    const filledFields = Object.values(watchedFields).filter(Boolean).length + (images.length > 0 ? 1 : 0)
+    const newProgress = (filledFields / totalFields) * 100
+    setProgress(newProgress)
+  }
+
+  const saveDraft = () => {
+    const draftData = { ...watchedFields, images }
+    localStorage.setItem('adDraft', JSON.stringify(draftData))
+    alert('Draft saved successfully!')
+  }
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+    <form onSubmit={handleSubmit(onSubmit)} onChange={calculateProgress} className="space-y-8">
+      <Progress value={progress} className="w-full bg-gray-200" />
+      
       <Card>
         <CardContent className="p-6">
           <Label htmlFor="images" className="text-lg font-semibold mb-2 block">Photos (max 5)</Label>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div {...getRootProps()} className="border-2 border-dashed border-gray-300 rounded-lg p-6 cursor-pointer">
+            <input {...getInputProps()} />
+            {isDragActive ? (
+              <p>Drop the files here ...</p>
+            ) : (
+              <p>Drag 'n' drop some files here, or click to select files</p>
+            )}
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 mt-4">
             {images.map((img, index) => (
               <div key={index} className="relative aspect-square">
                 <img src={img} alt={`Uploaded ${index + 1}`} className="w-full h-full object-cover rounded-lg" />
@@ -64,20 +94,6 @@ export default function CreateAdForm() {
                 </button>
               </div>
             ))}
-            {images.length < 5 && (
-              <label className="aspect-square flex flex-col items-center justify-center border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-green-500 transition-colors">
-                <Upload className="text-gray-400 mb-2" size={24} />
-                <span className="text-sm text-gray-500">Upload Image</span>
-                <input
-                  type="file"
-                  id="images"
-                  accept="image/*"
-                  multiple
-                  onChange={handleImageUpload}
-                  className="hidden"
-                />
-              </label>
-            )}
           </div>
         </CardContent>
       </Card>
@@ -89,28 +105,12 @@ export default function CreateAdForm() {
             <Controller
               name="title"
               control={control}
-              rules={{ 
-                required: 'Title is required',
-                maxLength: {
-                  value: 30,
-                  message: 'Title cannot exceed 30 characters'
-                }
-              }}
+              rules={{ required: 'Title is required', maxLength: 100 }}
               render={({ field }) => (
-                <>
-                  <Input 
-                    id="title" 
-                    {...field} 
-                    className="mt-1"
-                    maxLength={30}
-                    onChange={(e) => {
-                      if (e.target.value.length <= 30) {
-                        field.onChange(e);
-                      }
-                    }}
-                  />
-                  <p className="text-sm text-gray-500 mt-1">{field.value?.length || 0}/30</p>
-                </>
+                <div>
+                  <Input id="title" {...field} className="mt-1" maxLength={100} />
+                  <p className="text-sm text-gray-500 mt-1">{field.value?.length || 0}/100 characters</p>
+                </div>
               )}
             />
             {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>}
@@ -121,28 +121,12 @@ export default function CreateAdForm() {
             <Controller
               name="description"
               control={control}
-              rules={{ 
-                required: 'Description is required',
-                maxLength: {
-                  value: 300,
-                  message: 'Description cannot exceed 200 characters'
-                }
-              }}
+              rules={{ required: 'Description is required', maxLength: 1000 }}
               render={({ field }) => (
-                <>
-                  <Textarea 
-                    id="description" 
-                    {...field} 
-                    className="mt-1"
-                    maxLength={300}
-                    onChange={(e) => {
-                      if (e.target.value.length <= 300) {
-                        field.onChange(e);
-                      }
-                    }}
-                  />
-                  <p className="text-sm text-gray-500 mt-1">{field.value?.length || 0}/300</p>
-                </>
+                <div>
+                  <Textarea id="description" {...field} className="mt-1" maxLength={1000} />
+                  <p className="text-sm text-gray-500 mt-1">{field.value?.length || 0}/1000 characters</p>
+                </div>
               )}
             />
             {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>}
@@ -213,7 +197,6 @@ export default function CreateAdForm() {
                 control={control}
                 rules={{ required: 'Postcode is required' }}
                 render={({ field }) => <Input id="postcode" {...field} className="mt-1" />}
-                
               />
               {errors.postcode && <p className="text-red-500 text-sm mt-1">{errors.postcode.message}</p>}
             </div>
@@ -251,8 +234,12 @@ export default function CreateAdForm() {
         </CardContent>
       </Card>
 
-      <div className="flex justify-center">
-        <Button type="submit" className="w-1/3 bg-[#2F892C] text-white hover:bg-[#246B22]">Create Ad</Button>
+      <div className="flex justify-between">
+        <Button type="button" variant="outline" onClick={saveDraft}>
+          <Save className="w-4 h-4 mr-2" />
+          Save Draft
+        </Button>
+        <Button type="submit" className="bg-[#2F892C] text-white hover:bg-[#246B22]">Create Ad</Button>
       </div>
     </form>
   )
