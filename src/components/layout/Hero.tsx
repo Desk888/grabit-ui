@@ -24,7 +24,7 @@ const Hero = () => {
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
             Find What You Need,
-            <span className="block text-[#2F892C]">Right Around The Corner</span>
+            <span className="block text-white">Right Around The Corner</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-200">
             Discover unique items from people in your local community. <br />
