@@ -23,12 +23,6 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/settings" className="flex items-center hover:text-gray-200 transition-colors">
-                    <Settings size={18} className="mr-2" />
-                    Settings
-                  </Link>
-                </li>
-                <li>
                   <Link href="/help" className="flex items-center hover:text-gray-200 transition-colors">
                     <HelpCircle size={18} className="mr-2" />
                     Help & Support

@@ -3,6 +3,7 @@
 import ProductGrid from "../components/layout/ProductGrid"
 import Hero from "../components/layout/Hero"
 
+
 export default function Home() {
   return (
     <div className="bg-gray-50">

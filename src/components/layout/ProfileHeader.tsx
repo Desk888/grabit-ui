@@ -1,4 +1,5 @@
-import { User, MapPin, Package, Clock, Calendar, MoreVertical, Heart } from "lucide-react";
+'use client';
+import { User, MapPin, Package, Clock, Calendar, MoreVertical, Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "../../components/ui/card";
 import ProductCard from '@/components/layout/ProductCard';
 import Link from 'next/link';
@@ -27,6 +28,17 @@ const Profile = () => {
     joinedYear: "2021",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=400&fit=crop",
     bio: "Lover of all things 90s. I'm a huge fan of thrifting and giving life to clothes. I love to shop for vintage items and I'm always up for a good bargain. I also love to travel and explore new places. When I'm not shopping or traveling, you can find me reading, writing, or playing video games."
+  };
+
+  const scroll = (elementId: string, direction: 'left' | 'right') => {
+    const container = document.getElementById(elementId);
+    if (container) {
+      const scrollAmount = 300; // Adjust this value to control scroll distance
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
@@ -88,13 +100,36 @@ const Profile = () => {
           <Package className="w-5 h-5 text-[#2E882C]" />
           <h2 className="text-xl font-semibold">My Ads</h2>
         </div>
-        <Card className="p-6">
-          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
+        <Card className="p-6 relative">
+          <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scroll('my-ads-container', 'left')}
+              className="rounded-full bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+          </div>
+          <div 
+            id="my-ads-container"
+            className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
+          >
             {mockProducts.map((product) => (
               <div key={product.id} className="min-w-[250px]">
                 <ProductCard product={product} />
               </div>
             ))}
+          </div>
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scroll('my-ads-container', 'right')}
+              className="rounded-full bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
           </div>
         </Card>
       </section>
@@ -105,13 +140,36 @@ const Profile = () => {
           <Heart className="w-5 h-5 text-[#2E882C]" />
           <h2 className="text-xl font-semibold">Saved Items</h2>
         </div>
-        <Card className="p-6">
-          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
+        <Card className="p-6 relative">
+          <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scroll('saved-items-container', 'left')}
+              className="rounded-full bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+          </div>
+          <div 
+            id="saved-items-container"
+            className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
+          >
             {mockProducts.map((product) => (
               <div key={product.id} className="min-w-[250px]">
                 <ProductCard product={product} />
               </div>
             ))}
+          </div>
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scroll('saved-items-container', 'right')}
+              className="rounded-full bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
           </div>
         </Card>
       </section>
@@ -122,13 +180,36 @@ const Profile = () => {
           <Clock className="w-5 h-5 text-[#2E882C]" />
           <h2 className="text-xl font-semibold">Recently Viewed</h2>
         </div>
-        <Card className="p-6">
-          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
+        <Card className="p-6 relative">
+          <div className="absolute left-2 top-1/2 -translate-y-1/2 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scroll('recently-viewed-container', 'left')}
+              className="rounded-full bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </Button>
+          </div>
+          <div 
+            id="recently-viewed-container"
+            className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
+          >
             {mockProducts.map((product) => (
               <div key={product.id} className="min-w-[250px]">
                 <ProductCard product={product} />
               </div>
             ))}
+          </div>
+          <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => scroll('recently-viewed-container', 'right')}
+              className="rounded-full bg-white/80 hover:bg-white shadow-md"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </Button>
           </div>
         </Card>
       </section>

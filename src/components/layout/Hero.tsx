@@ -1,6 +1,6 @@
 'use client';
 
-import { Search, MapPin } from 'lucide-react';
+import { Search, MapPin, Leaf, TrendingDown } from 'lucide-react';
 import Image from 'next/image';
 import SearchBar from '../layout/SearchBar';
 import MyImage from '../../public/images/grabit_hero.jpg'
@@ -16,7 +16,7 @@ const Hero = () => {
           fill
           className="object-cover opacity-95"
         />
-        <div className="absolute inset-0 bg-gray-900 bg-opacity-70"></div>
+        <div className="absolute inset-0 bg-green-900 bg-opacity-50"></div>
       </div>
 
       {/* Content */}
@@ -26,7 +26,7 @@ const Hero = () => {
             Find What You Need,
             <span className="block text-white">Right Around The Corner</span>
           </h1>
-          <p className="mt-6 max-w-2xl mx-auto text-xl text-gray-200">
+          <p className="mt-6 max-w-2xl mx-auto text-xl text-white">
             Discover unique free items from people in your local community. <br />
           </p>
 
@@ -57,6 +57,20 @@ const Hero = () => {
                   {item}
                 </button>
               ))}
+            </div>
+            <div className="mt-8 flex flex-wrap justify-center gap-8 text-sm text-white">
+              <div className="flex items-center">
+                <Leaf className="h-6 w-6 mr-2 text-[#2F892C]" />
+                <span>Reduce Waste</span>
+              </div>
+              <div className="flex items-center">
+                <TrendingDown className="h-6 w-6 mr-2 text-[#2F892C]" />
+                <span>Lower CO2 Emissions</span>
+              </div>
+              <div className="flex items-center">
+                <Search className="h-6 w-6 mr-2 text-[#2F892C]" />
+                <span>Find Local Items</span>
+              </div>
             </div>
           </div>
         </div>

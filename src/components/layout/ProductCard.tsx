@@ -98,7 +98,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </div>
         <div className="p-3">
           <div className="flex justify-between items-start mb-2">
-            <h2 className="text-base font-medium text-gray-900 line-clamp-1">{product.title}</h2>
+            <h2 className="text-base font-medium text-[#2D882C] line-clamp-1">{product.title}</h2>
           </div>
           <div className="flex items-center text-sm text-gray-500 space-x-1">
             <MapPin size={14} className="flex-shrink-0" />
