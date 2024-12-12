@@ -252,7 +252,7 @@ export default function CreateAdForm() {
       </Card>
 
       <div className="flex justify-center">
-        <Button type="submit" className="w-1/3 bg-[#2F892C] text-white">Create Ad</Button>
+        <Button type="submit" className="w-1/3 bg-[#2F892C] text-white hover:bg-[#246B22]">Create Ad</Button>
       </div>
     </form>
   )
