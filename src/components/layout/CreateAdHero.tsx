@@ -10,7 +10,7 @@ export default function CreateAdHero() {
             <Info className="h-6 w-6 text-white" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-black-800 mb-2">Tips for creating a great ads:</h2>
+            <h2 className="text-2xl font-bold text-black-800 mb-2">Tips for creating great ads:</h2>
             <p className="text-black-700">
               Selling on Grabit is easy and free! Follow these steps to create your ad:
             </p>

@@ -1,4 +1,4 @@
-import { User, MapPin, Package, Clock, Calendar, MoreVertical } from "lucide-react";
+import { User, MapPin, Package, Clock, Calendar, MoreVertical, Heart } from "lucide-react";
 import { Card } from "../../components/ui/card";
 import ProductCard from '@/components/layout/ProductCard';
 import Link from 'next/link';
@@ -89,9 +89,28 @@ const Profile = () => {
           <h2 className="text-xl font-semibold">My Ads</h2>
         </div>
         <Card className="p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
             {mockProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div key={product.id} className="min-w-[250px]">
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
+        </Card>
+      </section>
+
+      {/* Saved Items Section */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-2">
+          <Heart className="w-5 h-5 text-[#2E882C]" />
+          <h2 className="text-xl font-semibold">Saved Items</h2>
+        </div>
+        <Card className="p-6">
+          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
+            {mockProducts.map((product) => (
+              <div key={product.id} className="min-w-[250px]">
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         </Card>
@@ -104,9 +123,11 @@ const Profile = () => {
           <h2 className="text-xl font-semibold">Recently Viewed</h2>
         </div>
         <Card className="p-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide">
             {mockProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <div key={product.id} className="min-w-[250px]">
+                <ProductCard product={product} />
+              </div>
             ))}
           </div>
         </Card>
