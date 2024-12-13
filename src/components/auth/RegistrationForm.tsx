@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Lock, User, Phone } from 'lucide-react';
+import { Mail, Lock, User, Phone, Eye, EyeOff } from 'lucide-react';
 import { InputField } from './InputField';
 
 interface RegistrationFormProps {
@@ -22,6 +22,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) 
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [showPassword, setShowPassword] = useState(false);
 
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
@@ -54,6 +55,10 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) 
     }
   };
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
@@ -84,15 +89,26 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) 
         )}
       </div>
 
-      <div>
+      <div className="relative">
         <InputField
           icon={<Lock className="w-5 h-5 text-gray-500" />}
-          type="password"
+          type={showPassword ? "text" : "password"}
           placeholder="Password"
           value={formData.password}
           onChange={handleChange('password')}
           required
         />
+        <button
+          type="button"
+          onClick={toggleShowPassword}
+          className="absolute inset-y-0 right-0 flex items-center pr-3"
+        >
+          {showPassword ? (
+            <EyeOff className="w-5 h-5 text-gray-500" />
+          ) : (
+            <Eye className="w-5 h-5 text-gray-500" />
+          )}
+        </button>
         {errors.password && (
           <p className="mt-1 text-sm text-red-600">{errors.password}</p>
         )}
