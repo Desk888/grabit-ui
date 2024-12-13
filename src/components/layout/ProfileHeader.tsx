@@ -1,5 +1,5 @@
 'use client';
-import { User, MapPin, Package, Clock, Calendar, MoreVertical, Heart, ChevronLeft, ChevronRight } from "lucide-react";
+import { User, MapPin, Package, Clock, Calendar, MoreVertical, Heart, ChevronLeft, ChevronRight, Trash2 } from "lucide-react";
 import { Card } from "../../components/ui/card";
 import ProductCard from '@/components/layout/ProductCard';
 import Link from 'next/link';
@@ -116,7 +116,15 @@ const Profile = () => {
             className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
           >
             {mockProducts.map((product) => (
-              <div key={product.id} className="min-w-[250px]">
+              <div key={product.id} className="min-w-[250px] relative group">
+                <Button
+                  variant="destructive"
+                  size="icon"
+                  className="absolute left-2 top-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+                  // onClick={() => handleDeleteAd(product.id)}
+                >
+                  <Trash2 className="w-4 h-4" />
+                </Button>
                 <ProductCard product={product} />
               </div>
             ))}
@@ -156,7 +164,15 @@ const Profile = () => {
             className="flex overflow-x-auto gap-4 pb-4 scrollbar-hide scroll-smooth"
           >
             {mockProducts.map((product) => (
-              <div key={product.id} className="min-w-[250px]">
+              <div key={product.id} className="min-w-[250px] relative group">
+                <Button
+                  variant="destructive"
+                  size="icon"
+                  className="absolute left-2 top-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+                  // onClick={() => handleRemoveSaved(product.id)}
+                >
+                  <Trash2 className="w-4 h-4" />
+                </Button>
                 <ProductCard product={product} />
               </div>
             ))}

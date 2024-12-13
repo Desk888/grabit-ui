@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ['picsum.photos', 'imgur.com'],
   },
+  output: 'standalone'
 };
 
 export default nextConfig;
