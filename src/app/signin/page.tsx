@@ -42,7 +42,7 @@ export const Login: React.FC = () => {
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Or{' '}
-          <a href="/register" className="font-medium text-[#2E882C] hover:text-[#247022]">
+          <a href="/signup" className="font-medium text-[#2E882C] hover:text-[#247022]">
             create a new account
           </a>
         </p>
