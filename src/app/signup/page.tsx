@@ -5,7 +5,7 @@ import { GoogleButton } from '../../components/auth/GoogleButton';
 import { Divider } from '../../components/auth/Divider';
 import { RegistrationForm } from '../../components/auth/RegistrationForm';
 
-export const Register: React.FC = () => {
+const Signup: React.FC = () => {
   const handleRegistration = (data: {
     fullName: string;
     email: string;
@@ -65,4 +65,4 @@ export const Register: React.FC = () => {
   );
 };
 
-export default Register;
+export default Signup;
