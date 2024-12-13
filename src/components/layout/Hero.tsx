@@ -60,15 +60,15 @@ const Hero = () => {
             </div>
             <div className="mt-8 flex flex-wrap justify-center gap-8 text-sm text-white">
               <div className="flex items-center">
-                <Leaf className="h-6 w-6 mr-2 text-[#2F892C]" />
+                <Leaf className="h-6 w-6 mr-2 text-white" />
                 <span>Reduce Waste</span>
               </div>
               <div className="flex items-center">
-                <TrendingDown className="h-6 w-6 mr-2 text-[#2F892C]" />
+                <TrendingDown className="h-6 w-6 mr-2 text-white" />
                 <span>Lower CO2 Emissions</span>
               </div>
               <div className="flex items-center">
-                <Search className="h-6 w-6 mr-2 text-[#2F892C]" />
+                <Search className="h-6 w-6 mr-2 text-white" />
                 <span>Find Local Items</span>
               </div>
             </div>

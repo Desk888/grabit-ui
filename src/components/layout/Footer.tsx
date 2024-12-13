@@ -29,12 +29,6 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="flex items-center hover:text-gray-200 transition-colors">
-                    <FileQuestion size={18} className="mr-2" />
-                    FAQ
-                  </Link>
-                </li>
-                <li>
                   <Link href="/terms" className="flex items-center hover:text-gray-200 transition-colors">
                     <FileQuestion size={18} className="mr-2" />
                     Terms & Conditions
