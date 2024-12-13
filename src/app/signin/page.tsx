@@ -5,7 +5,7 @@ import { LoginForm } from '../../components/auth/LoginForm';
 import { GoogleButton } from '../../components/auth/GoogleButton';
 import { Divider } from '../../components/auth/Divider';
 
-export const Login: React.FC = () => {
+const Login: React.FC = () => {
   const handleLogin = (email: string, password: string) => {
     console.log('Login attempt:', { email, password });
     // Implement login logic here
@@ -58,3 +58,5 @@ export const Login: React.FC = () => {
     </div>
   );
 };
+
+export default Login;
