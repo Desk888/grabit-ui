@@ -10,7 +10,7 @@ const menuItems = [
   { icon: <User className="h-4 w-4" />, label: 'Profile', href: '/profile' },
   { icon: <Settings className="h-4 w-4" />, label: 'Settings', href: '/settings' },
   { icon: <HelpCircle className="h-4 w-4" />, label: 'Help', href: '/help' },
-  { icon: <LogOut className="h-4 w-4" />, label: 'Sign Out', href: '/login' },
+  { icon: <LogOut className="h-4 w-4" />, label: 'Sign Out', href: '/signin' },
 ];
 
 const ProfileDropdown = () => {
