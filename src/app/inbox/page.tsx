@@ -22,6 +22,7 @@ const mockConversations = [
     unread: false,
     avatar: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop',
   },
+  // Add more conversa
   // Add more conversations as needed
 ];
 
@@ -67,10 +68,10 @@ const Inbox: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-50 h-screen">
+    <div className="bg-gray-50 min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">My Messages</h2>
-        <div className="border border-gray-200 rounded-lg p-4">
+        <div className="border border-gray-200 rounded-lg p-4 min-h-[80vh]">
           <div className="flex">
             <div className="w-96 flex-shrink-0">
               <ConversationList

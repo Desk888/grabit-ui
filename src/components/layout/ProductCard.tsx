@@ -41,7 +41,7 @@ export default function ProductCard({ product }: { product: Product }) {
   }
 
   useEffect(() => {
-    const interval = setInterval(nextImage, 5000)
+    const interval = setInterval(nextImage, 15000)
     return () => clearInterval(interval)
   }, [])
 

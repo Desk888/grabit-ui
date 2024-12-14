@@ -21,7 +21,7 @@ export function useProducts() {
       try {
         // In a real application, this would be an API call
         // For now, we'll use mock data
-        const mockProducts: Product[] = Array.from({ length: 24 }, (_, i) => ({
+        const mockProducts: Product[] = Array.from({ length: 48 }, (_, i) => ({
           id: i + 1,
           title: `Product ${i + 1}`,
           price: `£${Math.floor(Math.random() * 100) + 1}`,

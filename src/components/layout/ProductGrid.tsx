@@ -9,7 +9,7 @@ export default function ProductGrid() {
   const [currentPage, setCurrentPage] = useState(1)
   const { products, isLoading, error } = useProducts()
 
-  const PRODUCTS_PER_PAGE = 8
+  const PRODUCTS_PER_PAGE = 16
   const totalPages = Math.ceil((products?.length || 0) / PRODUCTS_PER_PAGE)
   
   const startIndex = (currentPage - 1) * PRODUCTS_PER_PAGE
@@ -44,6 +44,12 @@ export default function ProductGrid() {
 
   return (
     <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
+      <PaginationControls
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={setCurrentPage}
+        className="mt-8"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {currentProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
