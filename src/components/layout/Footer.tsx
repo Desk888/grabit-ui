@@ -29,13 +29,13 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="flex items-center hover:text-gray-200 transition-colors">
+                  <Link href="/help" className="flex items-center hover:text-gray-200 transition-colors">
                     <FileQuestion size={18} className="mr-2" />
                     Terms & Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="flex items-center hover:text-gray-200 transition-colors">
+                  <Link href="/help" className="flex items-center hover:text-gray-200 transition-colors">
                     <FileQuestion size={18} className="mr-2" />
                     Privacy Policy
                   </Link>
@@ -62,7 +62,7 @@ export default function Footer() {
             <p className="text-sm mb-4">
             Our mission is to make sustainability accessible by connecting people who want to give away items they no longer need with those who can use them. From furniture to books, electronics to clothes—Grabit helps reduce waste and create a circular economy, one free item at a time.
             </p>
-            <div className="space-y-2">
+            {/* <div className="space-y-2">
               <h3 className="text-xl font-semibold mb-4">Subscribe to Our Newsletter</h3>
               <div className="relative">
                 <input
@@ -77,7 +77,7 @@ export default function Footer() {
                   <Send size={20} />
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-green-400 text-center">

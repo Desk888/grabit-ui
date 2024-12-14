@@ -37,7 +37,7 @@ export default function ProductCard({ product }: { product: Product }) {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     )
-    setTimeout(() => setTransitioning(false), 500)
+    setTimeout(() => setTransitioning(false), 15000)
   }
 
   useEffect(() => {
