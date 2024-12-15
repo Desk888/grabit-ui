@@ -27,7 +27,7 @@ const Hero = () => {
             <span className="block text-white">Right Around The Corner</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-xl text-white">
-            Discover unique free items from people in your local community. <br />
+            Discover unique free items from people in your local community, or give a new home to your old furnitures, clothes, electronics and more. <br />
           </p>
 
           {/* Search Section */}

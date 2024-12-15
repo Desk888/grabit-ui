@@ -63,7 +63,7 @@ const ContactForm = () => {
         />
       </div>
       
-      <Button type="submit" className="w-full">
+      <Button type="submit" className="w-full bg-[#2F892C] hover:bg-green-700 text-white">
         Send Message
       </Button>
     </form>

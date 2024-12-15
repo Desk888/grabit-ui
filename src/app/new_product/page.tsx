@@ -10,7 +10,7 @@ export default function CreateAdPage() {
           {/* Main Form Section */}
           <div className="flex-1 bg-white shadow-lg rounded-lg overflow-hidden">
             <div className="bg-white px-6 py-4">
-              <h1 className="text-2xl md:text-3xl font-bold text-black">Create a New Ad</h1>
+              <h1 className="text-2xl md:text-3xl font-bold text-gray-900">Create a New Ad</h1>
             </div>
             <div className="p-6">
               <CreateAdForm/>
