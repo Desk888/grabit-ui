@@ -45,7 +45,7 @@ export const LoginForm: React.FC<LoginFormProps> = ({ onSubmit }) => {
             Remember me
           </label>
         </div>
-        <a href="#" className="text-sm text-[#2E882C] hover:text-[#247022]">
+        <a href="/forgot_password" className="text-sm text-[#2E882C] hover:text-[#247022]">
           Forgot password?
         </a>
       </div>

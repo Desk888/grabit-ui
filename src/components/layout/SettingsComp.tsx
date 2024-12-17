@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Camera, User, AtSign, Mail, Lock, MapPin, Phone, Save, Upload } from 'lucide-react';
+import { Camera, User, AtSign, Mail, Lock, MapPin, Phone, Save } from 'lucide-react';
 
 function SettingsComp() {
   const [formData, setFormData] = useState({
@@ -34,11 +34,6 @@ function SettingsComp() {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
-  };
-
-  const handleResetPassword = () => {
-    // Handle password reset
-    console.log('Password reset requested');
   };
 
   return (
@@ -127,13 +122,12 @@ function SettingsComp() {
                   <Lock className="w-4 h-4 mr-2" />
                   Password
                 </label>
-                <button
-                  type="button"
-                  onClick={handleResetPassword}
+                <a
+                  href="/forgot_password"
                   className="text-green-600 hover:text-green-700 text-sm font-medium focus:outline-none focus:underline"
                 >
                   Reset Password
-                </button>
+                </a>
               </div>
 
               {/* Address */}

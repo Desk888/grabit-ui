@@ -1,7 +1,8 @@
 {
-  "/inbox/page": "app/inbox/page.js",
-  "/signin/page": "app/signin/page.js",
-  "/signup/page": "app/signup/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/profile/page": "app/profile/page.js"
+  "/signin/page": "app/signin/page.js",
+  "/forgot_password/page": "app/forgot_password/page.js",
+  "/settings/page": "app/settings/page.js",
+  "/reset_password_confirmation/page": "app/reset_password_confirmation/page.js"
 }
