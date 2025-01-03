@@ -65,12 +65,12 @@ export default function ProductPage() {
     }
   };
 
-  const handleReport = () => {
-    console.log('Report functionality to be implemented');
-  };
-
   const handleContact = () => {
-    console.log('Contact functionality to be implemented');
+    window.location.href = '/inbox';
+  }
+
+  const handleReport = () => {
+    window.location.href = '/help';
   };
 
   return (
@@ -152,10 +152,9 @@ export default function ProductPage() {
           </div>
 
           <button
-            onClick={handleReport}
             className="text-gray-500 hover:text-gray-700 text-sm flex items-center space-x-2"
           >
-            <Flag className="w-4 h-4" />
+            <Flag className="w-4 h-4" onClick={handleReport}/>
             <span>Report this ad</span>
           </button>
         </div>

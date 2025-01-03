@@ -10,9 +10,8 @@ interface Props {
   };
 }
 
-// Generate metadata for SEO
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  // In a real app, fetch the product data here
+  // Fetch the product data here
   return {
     title: `${params.title} | Grabit`,
     description: "View this item on Grabit",
