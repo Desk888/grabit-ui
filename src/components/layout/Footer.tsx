@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-green-400 text-center">
           <p className="text-sm">
-            © Grabit 2024 | All Rights Reserved | Website by{' '}
+            © Grabit 2025 | All Rights Reserved | Website by{' '}
             <a 
               href="https://github.com/Desk888" 
               target="_blank" 

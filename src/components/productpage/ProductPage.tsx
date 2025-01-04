@@ -81,10 +81,6 @@ export default function ProductPage() {
             <a href="/" className="hover:text-[#2D882C]">Home</a>
             <span className="mx-2">/</span>
           </li>
-          <li className="flex items-center">
-            <a href="/category" className="hover:text-[#2D882C]">Category</a>
-            <span className="mx-2">/</span>
-          </li>
           <li className="text-gray-700">{product.title}</li>
         </ol>
       </nav>
