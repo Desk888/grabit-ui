@@ -1297,6 +1297,10 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
 .border-opacity-50 {
   --tw-border-opacity: 0.5;
 }
@@ -1719,6 +1723,9 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-transparent {
+  color: transparent;
 }
 .underline {
   text-decoration-line: underline;
@@ -2152,6 +2159,10 @@ video {
 }
 .focus-visible\:ring-offset-2:focus-visible {
   --tw-ring-offset-width: 2px;
+}
+.active\:text-red-500:active {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 .disabled\:pointer-events-none:disabled {
   pointer-events: none;

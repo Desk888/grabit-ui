@@ -147,12 +147,10 @@ export default function ProductPage() {
             </div>
           </div>
 
-          <button
-            className="text-gray-500 hover:text-gray-700 text-sm flex items-center space-x-2"
-          >
-            <Flag className="w-4 h-4" onClick={handleReport}/>
+          <a href="#" onClick={handleReport} className="text-gray-500 hover:text-gray-700 text-sm flex items-center space-x-2">
+            <Flag className="w-4 h-4"/>
             <span>Report this ad</span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

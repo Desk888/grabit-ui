@@ -93,7 +93,7 @@ export default function ProductCard({ product }: { product: Product }) {
             title="Save to Favorites"
             onClick={(e) => { e.preventDefault() }}
           >
-            <Heart className="w-4 h-4 text-gray-700 hover:text-red-500 transition-colors duration-200" />
+            <Heart className="w-4 h-4 text-gray-500 hover:text-red-500 active:text-red-500 transition-colors duration-200" fill="currentColor" />
           </button>
         </div>
         <div className="p-3">
