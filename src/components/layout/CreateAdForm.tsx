@@ -72,11 +72,7 @@ export default function CreateAdForm() {
     calculateProgress()
   }, [calculateProgress])
 
-  const saveDraft = () => {
-    const draftData = { ...watchedFields, images }
-    localStorage.setItem('adDraft', JSON.stringify(draftData))
-    alert('Draft saved successfully!')
-  }
+  // TODO: Add save draft functionality
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} onChange={calculateProgress} className="space-y-8">
@@ -247,7 +243,7 @@ export default function CreateAdForm() {
       </Card>
 
       <div className="flex justify-between">
-        <Button type="button" variant="outline" onClick={saveDraft}>
+        <Button type="button" variant="outline">
           <Save className="w-4 h-4 mr-2" />
           Save Draft
         </Button>
