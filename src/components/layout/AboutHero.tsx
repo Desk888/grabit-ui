@@ -7,7 +7,6 @@ import MyImage from '../../public/images/about_hero.jpg';
 function AboutHero() {
   return (
     <div className="relative">
-      {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
           src={MyImage}
@@ -18,7 +17,6 @@ function AboutHero() {
         <div className="absolute inset-0 bg-green-900 bg-opacity-50"></div>
       </div>
 
-      {/* Hero Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20">
         <div className="text-center">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -38,6 +36,7 @@ function AboutHero() {
               Learn More
             </button>
           </div> */}
+          
         </div>
       </div>
     </div>
