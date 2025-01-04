@@ -16,12 +16,12 @@ export default function Footer() {
                     Home
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/about" className="flex items-center hover:text-gray-200 transition-colors">
                     <Info size={18} className="mr-2" />
                     About Us
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/help" className="flex items-center hover:text-gray-200 transition-colors">
                     <HelpCircle size={18} className="mr-2" />
