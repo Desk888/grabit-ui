@@ -2,7 +2,7 @@
 
 import { PlusCircle, MessageCircle, Package } from 'lucide-react';
 
-import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from './NavDropdown';
 import Link from 'next/link';
 
 const Navbar = () => {

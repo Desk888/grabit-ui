@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +23,10 @@ const ContactForm = () => {
     setName("");
     setEmail("");
     setMessage("");
+
+    // Implement contact form logic here
   };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div>

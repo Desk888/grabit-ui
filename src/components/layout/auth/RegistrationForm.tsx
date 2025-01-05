@@ -64,6 +64,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({ onSubmit }) 
     setShowPassword(!showPassword);
   };
 
+  // implement registration logic here
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>

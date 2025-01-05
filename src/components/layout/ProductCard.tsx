@@ -5,6 +5,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MapPin, Heart, ChevronLeft, ChevronRight } from 'lucide-react'
 
+// Fetch product data from API
+
 interface Product {
   id: number
   title: string

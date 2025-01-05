@@ -5,6 +5,8 @@ import Image from 'next/image';
 import SearchBar from '../layout/SearchBar';
 import MyImage from '../../public/images/grabit_hero.jpg'
 
+// Implement search functionality here
+
 const Hero = () => {
   return (
     <div className="relative">

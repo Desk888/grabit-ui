@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 const PrivacySection = () => {
   return (
     <Card>
@@ -18,4 +19,5 @@ const PrivacySection = () => {
     </Card>
   );
 };
+
 export default PrivacySection;

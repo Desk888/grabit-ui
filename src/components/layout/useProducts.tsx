@@ -19,8 +19,7 @@ export function useProducts() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // In a real application, this would be an API call
-        // For now, we'll use mock data
+        // dummy data - fetch from API
         const mockProducts: Product[] = Array.from({ length: 48 }, (_, i) => ({
           id: i + 1,
           title: `Product ${i + 1}`,

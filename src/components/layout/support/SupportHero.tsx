@@ -1,7 +1,6 @@
 "use-client";
 
 import React from 'react';
-import { Search, HeartHandshake, MessageCircleQuestion, Clock, PhoneCall } from 'lucide-react';
 
 function Hero() {
   return (
@@ -26,12 +25,6 @@ function Hero() {
           <p className="mt-6 max-w-2xl mx-auto text-xl text-white">
             Get instant answers to your questions and access our comprehensive support resources.
           </p>
-          <div className="mt-10 max-w-3xl mx-auto">
-            <div className="mt-8 flex justify-center items-center gap-2 text-white">
-              <PhoneCall className="h-5 w-5" />
-              <span className="text-sm">Need urgent help? Call us at 1-800-SUPPORT</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>

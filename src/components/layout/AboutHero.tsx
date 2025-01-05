@@ -41,15 +41,6 @@ function AboutHero() {
                 Make a Donation
             </button>
           </div >
-          {/* <div className="mt-12">
-            <button 
-              onClick={() => window.location.href = '/about'}
-              className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-[#246B22] hover:bg-green-700 transition-colors duration-300 shadow-lg hover:shadow-xl"
-            >
-              Learn More
-            </button>
-          </div> */}
-          
         </div>
       </div>
     </div>

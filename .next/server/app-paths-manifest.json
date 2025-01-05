@@ -1,9 +1,6 @@
 {
   "/page": "app/page.js",
-  "/profile/page": "app/profile/page.js",
-  "/signin/page": "app/signin/page.js",
-  "/inbox/page": "app/inbox/page.js",
-  "/signup/page": "app/signup/page.js",
-  "/settings/page": "app/settings/page.js",
-  "/new_ad/page": "app/new_ad/page.js"
+  "/product/[id]/page": "app/product/[id]/page.js",
+  "/help/page": "app/help/page.js",
+  "/settings/page": "app/settings/page.js"
 }

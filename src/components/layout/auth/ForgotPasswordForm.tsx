@@ -14,34 +14,7 @@ export default function ForgotPasswordForm() {
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsLoading(true)
-    setMessage('')
-
-    try {
-      const response = await fetch('/api/forgot-password', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email }),
-      })
-
-      const data = await response.json()
-
-      if (response.ok) {
-        setMessage(data.message)
-        // Optionally, redirect to a confirmation page
-        // router.push('/forgot-password-confirmation')
-      } else {
-        throw new Error(data.message || 'Failed to send reset email')
-      }
-    } catch (error) {
-      console.error('Forgot password error:', error)
-      setMessage('An error occurred. Please try again.')
-    } finally {
-      setIsLoading(false)
-    }
+    // implement forgot password logic here
   }
 
   return (

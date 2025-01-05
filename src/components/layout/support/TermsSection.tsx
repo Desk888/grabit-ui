@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
 const TermsSection = () => {
   return (
     <Card>
@@ -32,4 +33,5 @@ const TermsSection = () => {
     </Card>
   );
 };
+
 export default TermsSection;

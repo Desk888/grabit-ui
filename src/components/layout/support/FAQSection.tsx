@@ -1,5 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+
 const FAQSection = () => {
   const faqs = [
     {
@@ -32,6 +34,7 @@ const FAQSection = () => {
     }
 
   ];
+
   return (
     <Card>
       <CardHeader>
@@ -50,4 +53,5 @@ const FAQSection = () => {
     </Card>
   );
 };
+
 export default FAQSection;

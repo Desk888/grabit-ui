@@ -35,7 +35,7 @@ export default function CreateAdForm() {
 
   const onSubmit = (data: FormData) => {
     console.log(data, images)
-    // Here you would typically send the data to your backend
+    // Implement ad creation logic here
   }
 
   const onDrop = useCallback((acceptedFiles: File[]) => {

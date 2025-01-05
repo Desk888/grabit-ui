@@ -4,8 +4,11 @@ import React, { useState } from 'react';
 import { Camera, User, AtSign, Mail, Lock, MapPin, Phone, Save } from 'lucide-react';
 
 function SettingsComp() {
+
+  // dummy data - fetch from API
   const [formData, setFormData] = useState({
-    fullName: 'Sarah Johnson',
+    firstname: 'Sarah',
+    lastname: 'Johnson',
     username: 'sarahj',
     email: 'sarah.johnson@example.com',
     address: 'London, UK',
@@ -33,7 +36,6 @@ function SettingsComp() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
   };
 
   return (
@@ -70,16 +72,32 @@ function SettingsComp() {
 
             {/* Form Fields */}
             <div className="space-y-4">
+
               {/* Full Name */}
               <div>
                 <label className="flex items-center text-sm font-medium text-gray-700 mb-1">
                   <User className="w-4 h-4 mr-2" />
-                  Full Name
+                  First Name
                 </label>
                 <input
                   type="text"
-                  name="fullName"
-                  value={formData.fullName}
+                  name="firstname"
+                  value={formData.firstname}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                />
+              </div>
+
+              {/* Last Name */}
+              <div>
+                <label className="flex items-center text-sm font-medium text-gray-700 mb-1">
+                  <User className="w-4 h-4 mr-2" />
+                  Last Name
+                </label>
+                <input
+                  type="text"
+                  name="lastname"
+                  value={formData.lastname}
                   onChange={handleInputChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 />

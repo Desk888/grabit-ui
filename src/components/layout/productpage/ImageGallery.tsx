@@ -19,7 +19,6 @@ export function ImageGallery({ images, currentImageIndex, setCurrentImageIndex, 
     setCurrentImageIndex(currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1);
   };
 
-  // Ensure all images have consistent dimensions
   const processedImages = images.map(img => `${img}?w=800&h=800&fit=crop&auto=format`);
 
   return (

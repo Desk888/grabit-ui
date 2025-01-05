@@ -16,12 +16,6 @@ export default function Footer() {
                     Home
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href="/about" className="flex items-center hover:text-gray-200 transition-colors">
-                    <Info size={18} className="mr-2" />
-                    About Us
-                  </Link>
-                </li> */}
                 <li>
                   <Link href="/help" className="flex items-center hover:text-gray-200 transition-colors">
                     <HelpCircle size={18} className="mr-2" />
@@ -62,22 +56,6 @@ export default function Footer() {
             <p className="text-sm mb-4">
             Our mission is to make sustainability accessible by connecting people who want to give away items they no longer need with those who can use them. From furniture to books, electronics to clothes—Grabit helps reduce waste and create a circular economy, one free item at a time.
             </p>
-            {/* <div className="space-y-2">
-              <h3 className="text-xl font-semibold mb-4">Subscribe to Our Newsletter</h3>
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full pl-4 pr-12 py-2 rounded-md bg-white text-gray-800 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-                <button 
-                  className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-[#2D882C] text-white p-1 rounded-md hover:bg-[#246F23] transition-colors"
-                  aria-label="Subscribe to newsletter"
-                >
-                  <Send size={20} />
-                </button>
-              </div>
-            </div> */}
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-green-400 text-center">

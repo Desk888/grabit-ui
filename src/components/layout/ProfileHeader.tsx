@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 
-// Dummy data
+// Dummy data - fetch from API
 const mockProducts = Array.from({ length: 4 }, (_, i) => ({
   id: i + 101,
   title: `My Product ${i + 1}`,
@@ -22,7 +22,8 @@ const mockProducts = Array.from({ length: 4 }, (_, i) => ({
 
 const Profile = () => {
   const user = {
-    name: "Sarah Johnson",
+    firstname: "Sarah",
+    lastname: "Johnson",
     username: "@sarahj",
     location: "London, UK",
     joinedYear: "2021",
@@ -33,7 +34,7 @@ const Profile = () => {
   const scroll = (elementId: string, direction: 'left' | 'right') => {
     const container = document.getElementById(elementId);
     if (container) {
-      const scrollAmount = 300; // Adjust this value to control scroll distance
+      const scrollAmount = 300;
       container.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
         behavior: 'smooth'
@@ -65,12 +66,12 @@ const Profile = () => {
           <div className="relative">
             <img
               src={user.image}
-              alt={user.name}
+              alt={user.firstname}
               className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg"
             />
           </div>
           <div className="text-center md:text-left space-y-2">
-            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{user.name}</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-gray-900">{user.firstname} {user.lastname}</h1>
             <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-gray-600">
               <div className="flex items-center justify-center md:justify-start gap-1">
                 <User className="w-4 h-4" />
