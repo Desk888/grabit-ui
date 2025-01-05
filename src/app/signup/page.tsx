@@ -7,7 +7,8 @@ import { RegistrationForm } from '../../components/layout/auth/RegistrationForm'
 
 const Signup: React.FC = () => {
   const handleRegistration = (data: {
-    fullName: string;
+    firstname: string;
+    lastname: string;
     email: string;
     password: string;
     confirmPassword: string;
