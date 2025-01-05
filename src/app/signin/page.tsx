@@ -1,23 +1,21 @@
 'use client';
 
 import React from 'react';
-import { LoginForm } from '../../components/auth/LoginForm';
-import { GoogleButton } from '../../components/auth/GoogleButton';
-import { Divider } from '../../components/auth/Divider';
+import { LoginForm } from '../../components/layout/auth/LoginForm';
+import { GoogleButton } from '../../components/layout/auth/GoogleButton';
+import { Divider } from '../../components/layout/auth/Divider';
 
 const Login: React.FC = () => {
   const handleLogin = (email: string, password: string) => {
-    console.log('Login attempt:', { email, password });
     // Implement login logic here
   };
 
   const handleGoogleLogin = () => {
-    console.log('Google login clicked');
     // Implement Google login logic here
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8 mb-12">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
           <div className="w-12 h-12 bg-[#2E882C] rounded-lg flex items-center justify-center">

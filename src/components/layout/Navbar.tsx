@@ -19,7 +19,7 @@ const Navbar = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-4">
-            <Link href="/new_product" className="nav-button text-white hover:bg-[#246B22] flex flex-col items-center" title="Add Product">
+            <Link href="/new_ad" className="nav-button text-white hover:bg-[#246B22] flex flex-col items-center" title="Add Product">
               <PlusCircle className="h-5 w-5" />
               <span className="text-xs mt-0.5">Sell</span>
             </Link>

@@ -1,5 +1,5 @@
 
-import ProductPage from "@/components/productpage/ProductPage";
+import ProductPage from "@/components/layout/productpage/ProductPage";
 import { Metadata } from "next";
 
 interface Props {

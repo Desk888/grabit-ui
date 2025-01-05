@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { GoogleButton } from '../../components/auth/GoogleButton';
-import { Divider } from '../../components/auth/Divider';
-import { RegistrationForm } from '../../components/auth/RegistrationForm';
+import { GoogleButton } from '../../components/layout/auth/GoogleButton';
+import { Divider } from '../../components/layout/auth/Divider';
+import { RegistrationForm } from '../../components/layout/auth/RegistrationForm';
 
 const Signup: React.FC = () => {
   const handleRegistration = (data: {

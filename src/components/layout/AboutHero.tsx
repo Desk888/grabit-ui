@@ -3,8 +3,13 @@
 import React from 'react';
 import Image from 'next/image';
 import MyImage from '../../public/images/about_hero.jpg';
+import { HeartHandshake } from 'lucide-react';
 
 function AboutHero() {
+  const handleDonateClick = () => {
+    window.location.href = '/donate';
+  };
+
   return (
     <div className="relative">
       <div className="absolute inset-0 z-0">
@@ -27,7 +32,15 @@ function AboutHero() {
           <p className="mt-6 max-w-2xl mx-auto text-xl text-white leading-relaxed">
             Grabit is and will always be free. Our mission is to connect communities, reduce waste, and make a positive impact on our planet - one item at a time.
           </p>
-
+          <div className="mt-12">
+          <button 
+                onClick={handleDonateClick}
+                className="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md text-white bg-[#2F892C] hover:bg-[#246B22] transition-colors duration-300 shadow-lg hover:shadow-xl gap-2"
+            >
+            <HeartHandshake className="w-6 h-6" />
+                Make a Donation
+            </button>
+          </div >
           {/* <div className="mt-12">
             <button 
               onClick={() => window.location.href = '/about'}

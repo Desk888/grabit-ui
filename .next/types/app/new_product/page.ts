@@ -1,8 +1,8 @@
 // File: /Users/lorenzofilippini/workspace/grabit-ui/src/app/new_product/page.tsx
-import * as entry from '../../../../src/app/new_product/page.js'
+import * as entry from '../../../../src/app/new_ad/page.jsx'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
-type TEntry = typeof import('../../../../src/app/new_product/page.js')
+type TEntry = typeof import('../../../../src/app/new_ad/page.jsx')
 
 // Check that the entry is a valid entry
 checkFields<Diff<{

@@ -1,4 +1,4 @@
-import ForgotPasswordForm from '@/components/auth/ForgotPasswordForm'
+import ForgotPasswordForm from '@/components/layout/auth/ForgotPasswordForm'
 import { Metadata } from 'next'
 import { Mail } from 'lucide-react'
 

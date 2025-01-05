@@ -1,11 +1,11 @@
 import { HelpCircle, FileText, Mail, Info, Shield } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import ContactForm from "@/components/support/ContactForm";
-import FAQSection from "@/components/support/FAQSection";
-import TermsSection from "@/components/support/TermsSection";
-import PrivacySection from "@/components/support/PrivacySection";
-import SupportHero from "@/components/support/SupportHero";
+import ContactForm from "@/components/layout/support/ContactForm";
+import FAQSection from "@/components/layout/support/FAQSection";
+import TermsSection from "@/components/layout/support/TermsSection";
+import PrivacySection from "@/components/layout/support/PrivacySection";
+import SupportHero from "@/components/layout/support/SupportHero";
 
 const Help = () => {
   return (
