@@ -16,6 +16,7 @@ interface Product {
 }
 
 export default function ProductCard({ product }: { product: Product }) {
+
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isTransitioning, setTransitioning] = useState(false)
 
@@ -52,6 +53,8 @@ export default function ProductCard({ product }: { product: Product }) {
     const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
     return `${diffInDays} days ago`
   }
+
+  // Add functionality to handle clicks on the product card
 
   return (
     <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden border border-gray-100">
