@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useSearch } from './SearchContext'
 
 interface Product {
   id: number
@@ -15,11 +16,12 @@ export function useProducts() {
   const [products, setProducts] = useState<Product[] | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<Error | null>(null)
+  const { searchTerm, category, postcode } = useSearch()
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // dummy data - fetch from API
+
         const mockProducts: Product[] = Array.from({ length: 48 }, (_, i) => ({
           id: i + 1,
           title: `Product ${i + 1}`,
@@ -29,7 +31,22 @@ export function useProducts() {
           images: [`https://picsum.photos/seed/product${i + 1}/300/300`]
         }))
 
-        setProducts(mockProducts)
+        const filteredProducts = mockProducts.filter(product => {
+          const matchesSearch = !searchTerm || 
+            product.title.toLowerCase().includes(searchTerm.toLowerCase())
+          
+          const matchesLocation = !postcode || 
+            product.location.toLowerCase().includes(postcode.toLowerCase())
+          
+          const matchesCategory = !category || 
+            category === 'All Categories' || 
+            (category === 'Electronics' && product.id % 2 === 0) ||
+            (category === 'Furniture' && product.id % 2 === 1)
+
+          return matchesSearch && matchesLocation && matchesCategory
+        })
+
+        setProducts(filteredProducts)
         setIsLoading(false)
       } catch (err) {
         setError(err instanceof Error ? err : new Error('Failed to fetch products'))
@@ -37,8 +54,10 @@ export function useProducts() {
       }
     }
 
-    fetchProducts()
-  }, [])
+    const timeoutId = setTimeout(fetchProducts, 300)
+    return () => clearTimeout(timeoutId)
+    
+  }, [searchTerm, category, postcode]) 
 
   return { products, isLoading, error }
 }
