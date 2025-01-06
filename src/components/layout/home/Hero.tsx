@@ -17,6 +17,11 @@ const categories = [
   'Home & Garden',
   'Toys & Games',
   'Art & Crafts',
+  'Tools & Hardware',
+  'Appliance',
+  'Computers',
+  'Music & Music Equipment',
+  'Other'
 ];
 
 const Hero = () => {
