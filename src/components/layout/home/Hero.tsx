@@ -114,16 +114,9 @@ const Hero = () => {
             <span>Popular:</span>
             {['Electronics', 'Furniture', 'Books', 'Sports', 'Clothing'].map(
               (item) => (
-                <button
-                  key={item}
-                  className="hover:text-[#2F892C] transition-colors duration-200"
-                  onClick={() => {
-                    setCategory(item);
-                    setSearchTerm('');
-                  }}
-                >
+                <span key={item} className="hover:text-[#2F892C] transition-colors duration-200">
                   {item}
-                </button>
+                </span>
               )
             )}
           </div>
