@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeartHandshake } from 'lucide-react';
-import MyImage from '../../public/images/grabit_donation.jpg'
+import MyImage from '../../../public/images/grabit_donation.jpg'
 
 export function DonationHero() {
     const handleDonateClick = () => {
