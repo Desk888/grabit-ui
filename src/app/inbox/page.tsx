@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero } from '@/components/layout/InboxHero';
+import { Hero } from '@/components/layout/chat/InboxHero';
 
 function InboxHero() {
   return (

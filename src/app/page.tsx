@@ -1,9 +1,9 @@
 'use client';
 
-import ProductGrid from "../components/layout/ProductGrid"
-import Hero from "../components/layout/Hero"
-import AboutHero from "@/components/layout/AboutHero";
-import ProductFilters from "@/components/layout/ProductFilters";
+import ProductGrid from "../components/layout/items/ProductGrid"
+import Hero from "../components/layout/home/Hero"
+import AboutHero from "@/components/layout/home/AboutHero";
+import ProductFilters from "@/components/layout/items/ProductFilters";
 
 
 export default function Home() {

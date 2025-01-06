@@ -1,9 +1,9 @@
 'use client';
 
-import CreateAdForm from '../../components/layout/CreateAdForm'
-import CreateAdHero from '@/components/layout/CreateAdHero'
+import CreateAdForm from '../../components/layout/ads/CreateAdForm'
+import CreateAdHero from '@/components/layout/ads/CreateAdHero'
 import AutoScroll from '@/components/layout/AutoScroll'
-import { DonationHero } from '@/components/layout/DonationHero'
+import { DonationHero } from '@/components/layout/home/DonationHero'
 
 export default function CreateAdPage() {
   return (
