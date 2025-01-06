@@ -24,7 +24,17 @@ type FormData = {
   email: string
 }
 
-const categories = ['Electronics & Hardware', 'Home & Furniture', 'Clothing & Accessories', 'Books', 'Sports & Outdoors', 'Tools & Hardware', 'Other']
+const categories = [
+  'All Categories',
+  'Electronics',
+  'Furniture',
+  'Books',
+  'Sports',
+  'Clothing',
+  'Home & Garden',
+  'Toys & Games',
+  'Art & Crafts',
+];
 const conditions = ['Used - Fair', 'Used - Good', 'Used - Excellent', 'Brand New - Unboxed', 'Brand New - Used']
 
 export default function CreateAdForm() {
