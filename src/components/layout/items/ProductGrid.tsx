@@ -26,12 +26,6 @@ export default function ProductGrid() {
 
   return (
     <div className="space-y-6 bg-gray-50 p-6 rounded-lg">
-      <PaginationControls
-        currentPage={currentPage}
-        totalPages={totalPages}
-        onPageChange={setCurrentPage}
-        className="mt-8"
-      />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {currentProducts.map((product) => (
           <ProductCard key={product.id} product={product} />
