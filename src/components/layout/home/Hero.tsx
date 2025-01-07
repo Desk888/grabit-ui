@@ -24,6 +24,8 @@ const categories = [
   'Other'
 ];
 
+
+
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { 
