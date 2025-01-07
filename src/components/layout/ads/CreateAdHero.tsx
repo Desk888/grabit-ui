@@ -3,10 +3,10 @@ import { Card, CardContent } from '@/components/ui/card'
 
 export default function CreateAdHero() {
   return (
-    <Card className="bg-gradient-to-r from-green-50 to-green-100 border-none shadow-md">
+    <Card className="bg-[#FFFFFF] border-none shadow-md">
       <CardContent className="p-6">
         <div className="flex items-start space-x-4">
-          <div className="bg-green-500 rounded-full p-2">
+          <div className="bg-[#2F892C] rounded-full p-2">
             <Info className="h-6 w-6 text-white" />
           </div>
           <div>

@@ -1,6 +1,7 @@
 {
-  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/forgot_password/page": "app/forgot_password/page.js",
-  "/reset_password/page": "app/reset_password/page.js"
+  "/settings/page": "app/settings/page.js",
+  "/help/page": "app/help/page.js",
+  "/signin/page": "app/signin/page.js",
+  "/signup/page": "app/signup/page.js"
 }
