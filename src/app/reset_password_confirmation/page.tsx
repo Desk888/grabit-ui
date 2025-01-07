@@ -1,10 +1,8 @@
-"use client"
+'use client';
 
 import { CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 
 export default function ResetPasswordConfirmationPage() {
   return (
