@@ -7,6 +7,7 @@ import TermsSection from "@/components/layout/support/TermsSection";
 import PrivacySection from "@/components/layout/support/PrivacySection";
 import SupportHero from "@/components/layout/support/SupportHero";
 
+
 const Help = () => {
   return (
     <div className="min-h-screen h-full bg-gradient-to-b from-white to-[#F1F0FB] dark:from-gray-900 dark:to-gray-800">

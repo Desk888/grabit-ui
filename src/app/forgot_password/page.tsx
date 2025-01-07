@@ -1,11 +1,5 @@
 import ForgotPasswordForm from '@/components/layout/auth/ForgotPasswordForm'
-import { Metadata } from 'next'
 import { Mail } from 'lucide-react'
-
-export const metadata: Metadata = {
-  title: 'Forgot Password | My App',
-  description: 'Reset your password',
-}
 
 export default function ForgotPasswordPage() {
   return (
