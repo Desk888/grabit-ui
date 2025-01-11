@@ -258,10 +258,6 @@ export default function CreateAdForm() {
       </Card>
 
       <div className="flex justify-between">
-        <Button type="button" variant="outline">
-          <Save className="w-4 h-4 mr-2" />
-          Save Draft
-        </Button>
         <Button type="submit" className="bg-[#2F892C] text-white hover:bg-[#246B22]">Create Ad</Button>
       </div>
     </form>
