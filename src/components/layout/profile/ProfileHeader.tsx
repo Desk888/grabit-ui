@@ -66,6 +66,9 @@ const Profile = () => {
               <DropdownMenuItem asChild>
                 <Link href="/settings">Edit Profile</Link>
               </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/delete_profile_confirmation" className="text-red-600">Delete Profile</Link>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
